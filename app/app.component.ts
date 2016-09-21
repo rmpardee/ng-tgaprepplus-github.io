@@ -27,24 +27,24 @@ const objectSprint: Sprint[] = [
   selector: 'my-app',
   template: `
     <h1>{{ title }}</h1>
+    <ul class="objSprint">
+      <li *ngFor="let sprint of objSprint" (click)="onSelect(sprint)">
+        <span>{{ sprint.name }}</span>
+      </li>
+    </ul>
     <div *ngIf="selectedSprint">
       <h2>{{ selectedSprint.name }}</h2>
       <div>{{ selectedSprint.repo }}</div>
     </div>
-    <ul class="objSprint">
-      <li *ngFor="let sprint of objSprint">
-        <span>{{ sprint.name }}</span>
-      </li>
-    </ul>
   `
 })
 
-// onSelect(sprint: Sprint): void {
-//   this.selectedSprint = sprint;
-// }
 
 export class AppComponent {
   title = 'Prep+ Course Materials';
-  objSprint: objectSprint;
-  // selectedSprint: Sprint;
+  objSprint = objectSprint;
+  onSelect(sprint: Sprint): void {
+    this.selectedSprint = sprint;
+  }
+  selectedSprint: Sprint;
 }
