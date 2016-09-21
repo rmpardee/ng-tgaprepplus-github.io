@@ -3,7 +3,7 @@ module.exports = function(app) {
   // main route 
   app.route('/')
     .get(function(req, res) {
-      // res.send();
+      response.render('././index.html');
     })
     .post(function(req, res) {
       // res.send();
