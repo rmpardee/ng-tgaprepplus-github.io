@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,21 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var AppModule = (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
-}());
-exports.AppModule = AppModule;
+define(["require", "exports", '@angular/core', '@angular/platform-browser', './components/app.component', './components/app.resourcesComponent', './components/app.sprintsComponent'], function (require, exports, core_1, platform_browser_1, app_component_1, app_resourcesComponent_1, app_sprintsComponent_1) {
+    "use strict";
+    var AppModule = (function () {
+        function AppModule() {
+        }
+        AppModule = __decorate([
+            core_1.NgModule({
+                imports: [platform_browser_1.BrowserModule /*, Ng2BootstrapModule*/],
+                declarations: [app_component_1.AppComponent, app_resourcesComponent_1.ResourcesComponent, app_sprintsComponent_1.SprintsComponent],
+                bootstrap: [app_component_1.AppComponent, app_resourcesComponent_1.ResourcesComponent, app_sprintsComponent_1.SprintsComponent]
+            }), 
+            __metadata('design:paramtypes', [])
+        ], AppModule);
+        return AppModule;
+    }());
+    exports.AppModule = AppModule;
+});
 //# sourceMappingURL=app.module.js.map

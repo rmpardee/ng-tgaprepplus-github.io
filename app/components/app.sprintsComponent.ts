@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { sprintDataObj } from './sprints/objects';
+import { sprintDataObj } from './data/sprints';
 
 export class Sprint {
   name: string;
@@ -9,9 +9,9 @@ export class Sprint {
 }
 
 @Component({
-  selector: 'my-app',
+  selector: 'sprints',
   template: `
-    <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
     <ul class="objSprint">
       <li *ngFor="let sprint of sprints" (click)="onSelect(sprint)">
         <span>{{ sprint.name }}</span>
@@ -19,13 +19,16 @@ export class Sprint {
     </ul>
     <div *ngIf="selectedSprint">
       <h2>{{ selectedSprint.name }}</h2>
-      <div>{{ selectedSprint.repo }}</div>
+      <ul>
+        <li><a target="_blank" href="{{ selectedSprint.slides }}">{{ selectedSprint.name }} Slides</a></li>
+        <li><a target="_blank" href="{{ selectedSprint.repo }}">{{ selectedSprint.name }} Repo</a></li>
+      </ul>
     </div>
   `
 })
 
-export class AppComponent {
-  title = 'Prep+ Course Materials';
+export class SprintsComponent {
+  title = 'Sprints';
   sprints = sprintDataObj;
   onSelect(sprint: Sprint): void {
     this.selectedSprint = sprint;
