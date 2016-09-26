@@ -11,13 +11,15 @@ export class Sprint {
 @Component({
   selector: 'sprints',
   template: `
-    <h2>{{ title }}</h2>
-    <ul class="objSprint">
-      <li *ngFor="let sprint of sprints" (click)="onSelect(sprint)">
-        <span>{{ sprint.name }}</span>
-      </li>
-    </ul>
-    <div *ngIf="selectedSprint">
+    <div id="topics">
+      <h2>{{ title }}</h2>
+      <ul class="objSprint">
+        <li *ngFor="let sprint of sprints" (click)="onSelect(sprint)">
+          <span>{{ sprint.name }}</span>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="selectedSprint" id="specifics">
       <h2>{{ selectedSprint.name }}</h2>
       <ul>
         <li><a target="_blank" href="{{ selectedSprint.slides }}">{{ selectedSprint.name }} Slides</a></li>

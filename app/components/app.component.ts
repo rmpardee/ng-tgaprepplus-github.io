@@ -5,11 +5,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
+    <a target="_blank" href="http://telegraphprep.github.io/"><img id="headerLogo" src="./images/stackedLogo.png"></a>
     <h1>{{ title }}</h1>
-    <table>
+    <table id="container">
       <tr>
+        <td id="sprint-row"><sprints id="sprints"></sprints></td>
         <td><resources></resources></td>
-        <td><sprints></sprints></td>
       </tr>
     </table>
   `

@@ -10,6 +10,8 @@ import { resourcesDataObj } from './data/resources';
         <a target="_blank" href="{{ resource.link }}">{{ resource.name }}</a>
       </li>
     </ul>
+    <p>Email us!<br>
+    <a target="_blank" href="mailto:prepcommunication@telegraphacademy.com">prepcommunication@telegraphacademy.com</a></p>
   `
 })
 
